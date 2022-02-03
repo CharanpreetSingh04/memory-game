@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React,{ useState} from 'react';
+import Board from './components/Board';
 function App() {
+  const [count,setCount] = useState(0);
+  const [best,setBest] = useState(0);
+  function increaseScore(){
+    setCount(count+1);
+    if(count+1>best){
+      setBest(count+1);
+    }
+  }
+  
+  function initializeScore(){
+    setCount(0);
+  }
   return (
-    <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          <h1 className='heading'>Memory Game</h1>
+          <ul className='scores'>
+            <li>Your Score: {count}</li>
+            <li>Best Score: {best}</li>
+          </ul>
+        </div>
+        <Board increaseScore = {()=>increaseScore()} initializeScore = {()=> initializeScore()}/>
       </header>
-    </div>
   );
 }
 

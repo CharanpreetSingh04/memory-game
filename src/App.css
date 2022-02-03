@@ -18,8 +18,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -35,4 +35,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+.scores{
+  text-align: right;
+  justify-content: space-between;
+  list-style-type: none;
+}
+.heading{
+  text-align: center;
+}
+.Board{
+  border: white solid 5px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 20px;
+  padding-left: 8%;
+  padding-top: 2%;
+}
+img{
+  width: 200px;
+  height: 250px;
+  border-radius: 25px;
+}
+img:hover{
+  opacity: 50%;
+  transform: scale(0.9);
+  border: white solid 5px;
+  
 }
